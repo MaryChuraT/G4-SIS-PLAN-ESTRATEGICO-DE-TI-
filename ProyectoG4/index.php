@@ -72,7 +72,7 @@
 
     <div class="container">
         <div class="header">
-            <h1>CÓMO ELABORAR UN PLAN ESTRATÉGICO DE TECNOLOGÍAS DE INFORMACIÓN - PETI</h1>
+            <h1>COMO ELABORAR UN PLAN ESTRATÉGICO DE TECNOLOGÍAS DE INFORMACIÓN - PETI</h1>
         </div>
         
         <p>
