@@ -22,5 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../pages/register.php?mensaje=Error al registrar el usuario.");
         }
     }
+    $stmt->close();
+    $conn->close();
 }
 ?>
