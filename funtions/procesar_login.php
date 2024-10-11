@@ -23,6 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../pages/login.php?mensaje=Contraseña incorrecta.");
             exit();
         }
+    } else {
+        header("Location: ../pages/login.php?mensaje=Usuario no encontrado.");
+        exit();
     }
 }
 ?>
