@@ -8,5 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        header("Location: ../pages/register.php?mensaje=El usuario ya existe.");
+    }
 }
 ?>
