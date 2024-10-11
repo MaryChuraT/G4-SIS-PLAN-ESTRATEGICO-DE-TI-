@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visión de la Empresa</title>
+    <title>VISION DE LA EMPRESA</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -92,7 +92,7 @@
         <p>La visión debe ser conocida y compartida por todos los miembros de la empresa y también por aquellos que se relacionan con ella.</p>
         
         <form action="" method="POST">
-            <label for="vision">En este apartado describa la Visión de su empresa:</label><br>
+            <label for="vision">En este apartado describa la Visión de la empresa:</label><br>
             <textarea id="vision" name="vision" required></textarea><br><br>
             <input type="submit" value="Enviar" class="boton">
         </form>
