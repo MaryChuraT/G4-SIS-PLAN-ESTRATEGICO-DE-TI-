@@ -100,10 +100,10 @@
 
     <div class="caja-enlaces">
         <div class="enlace">
-            <a href="mision.php" class="boton">1. Misión</a>
+            <a href="mision.php" class="boton">1. MISION</a>
         </div>
         <div class="enlace">
-            <a href="valores.php" class="boton">3. Valores</a>
+            <a href="valores.php" class="boton">3. VALORES</a>
         </div>
     </div>
 
