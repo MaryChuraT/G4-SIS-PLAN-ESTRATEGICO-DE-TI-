@@ -30,6 +30,22 @@ CREATE TABLE IF NOT EXISTS `mision` (
 INSERT INTO `mision` (`id`, `texto`) VALUES
 	(1, 'Escribir aqui la mision de la empresa');
 
+-- Volcando estructura para tabla bdproyectog4.valores
+CREATE TABLE IF NOT EXISTS `valores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `texto` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.valores: ~6 rows (aproximadamente)
+INSERT INTO `valores` (`id`, `texto`) VALUES
+	(1, 'valor1'),
+	(2, 'valor2'),
+	(3, 'valor3'),
+	(4, 'valor4'),
+	(5, 'valor5'),
+	(6, 'valor6');
+
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
