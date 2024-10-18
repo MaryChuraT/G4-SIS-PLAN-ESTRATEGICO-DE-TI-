@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.24-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
 -- HeidiSQL Versión:             12.4.0.6659
 -- --------------------------------------------------------
@@ -14,64 +14,69 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Crear la base de datos solo una vez
-CREATE DATABASE IF NOT EXISTS `bdproyectog4` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+-- Volcando estructura de base de datos para bdproyectog4
+CREATE DATABASE IF NOT EXISTS `bdproyectog4` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `bdproyectog4`;
 
--- Tabla mision
+-- Volcando estructura para tabla bdproyectog4.mision
 CREATE TABLE IF NOT EXISTS `mision` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Insertar datos en tabla mision
-REPLACE INTO `mision` (`id`, `texto`) VALUES
+-- Volcando datos para la tabla bdproyectog4.mision: ~1 rows (aproximadamente)
+INSERT INTO `mision` (`id`, `texto`) VALUES
 	(1, 'Escribir aqui la mision de la empresa');
 
--- Tabla usuarios
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Tabla objetivos
+-- Volcando estructura para tabla bdproyectog4.objetivos
 CREATE TABLE IF NOT EXISTS `objetivos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `estrategico` varchar(500) DEFAULT NULL,
   `especifico1` varchar(500) DEFAULT NULL,
   `especifico2` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Insertar datos en tabla objetivos
+-- Volcando datos para la tabla bdproyectog4.objetivos: ~3 rows (aproximadamente)
 INSERT INTO `objetivos` (`id`, `estrategico`, `especifico1`, `especifico2`) VALUES
 	(1, 'Estrategico 1', 'Especifico 1.1', 'Especifico 1.2'),
 	(2, 'Estrategico 2', 'Especifico 2.1', 'Especifico 2.2'),
 	(3, 'Estrategico 3', 'Especifico 3.1', 'Especifico 3.2');
 
--- Tabla uen
+-- Volcando estructura para tabla bdproyectog4.uen
 CREATE TABLE IF NOT EXISTS `uen` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uen` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Insertar datos en tabla uen
+-- Volcando datos para la tabla bdproyectog4.uen: ~1 rows (aproximadamente)
 INSERT INTO `uen` (`id`, `uen`) VALUES
 	(1, 'Informacion UEN del a empresa');
 
--- Tabla valores
+-- Volcando estructura para tabla bdproyectog4.usuarios
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla bdproyectog4.usuarios: ~1 rows (aproximadamente)
+INSERT INTO `usuarios` (`id`, `username`, `password`) VALUES
+	(1, 'user', '$2y$10$wuwG9pqCg7N6RzHxrBcskOc3FzS8p/83jJ6ByEsCve3fCDCQj4Boe');
+
+-- Volcando estructura para tabla bdproyectog4.valores
 CREATE TABLE IF NOT EXISTS `valores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
--- Insertar datos en tabla valores
+-- Volcando datos para la tabla bdproyectog4.valores: ~6 rows (aproximadamente)
 INSERT INTO `valores` (`id`, `texto`) VALUES
 	(1, 'valor1'),
 	(2, 'valor2'),
@@ -79,6 +84,17 @@ INSERT INTO `valores` (`id`, `texto`) VALUES
 	(4, 'valor4'),
 	(5, 'valor5'),
 	(6, 'valor6');
+
+-- Volcando estructura para tabla bdproyectog4.vision
+CREATE TABLE IF NOT EXISTS `vision` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `texto` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla bdproyectog4.vision: ~1 rows (aproximadamente)
+INSERT INTO `vision` (`id`, `texto`) VALUES
+	(1, 'Texto de Vision');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

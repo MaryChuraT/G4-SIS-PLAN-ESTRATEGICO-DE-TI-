@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php'; // Incluir el archivo de conexión
+include '../config/conexion.php'; // Incluir el archivo de conexión
 $link = conectarse(); // Conectar a la base de datos
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirigir a la página de valores después de guardar
-    header("Location: valores.php");
+    header("Location: ../pages/valores.php");
     exit();
 }
 

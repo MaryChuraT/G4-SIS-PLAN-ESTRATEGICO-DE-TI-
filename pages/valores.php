@@ -161,7 +161,7 @@
 
         <div class="form-section">
             <p>En este apartado exponga los Valores de su empresa</p>
-            <form action="guardar_valores.php" method="POST">
+            <form action="../funtions/guardar_valores.php" method="POST">
                 <table style="width: 100%;">
                     <?php
                     include '../config/conexion.php'; // Incluir el archivo de conexión

@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión
-include 'conexion.php';
+include '../config/conexion.php';
 
 // Conectar a la base de datos
 $conn = conectarse();
@@ -29,6 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 mysqli_close($conn);
 
 // Redirigir de vuelta a la página de objetivos (o donde prefieras)
-header("Location: objetivos.php");
+header("Location: ../pages/objetivos.php");
 exit;
 ?>

@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión
-include 'conexion.php';
+include '../config/conexion.php';
 
 // Conectar a la base de datos
 $conn = conectarse();
@@ -32,6 +32,6 @@ if (mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($co
 mysqli_close($conn);
 
 // Redirigir de vuelta a la página original (opcional)
-header("Location: objetivos.php");
+header("Location: ../pages/objetivos.php");
 exit;
 ?>
