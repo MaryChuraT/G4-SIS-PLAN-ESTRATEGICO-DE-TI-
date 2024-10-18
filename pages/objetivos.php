@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión
-include 'conexion.php';
+include '../config/conexion.php';
 
 // Conectar a la base de datos
 $conn = conectarse();
@@ -182,7 +182,7 @@ mysqli_close($conn);
         <div class="content">
             <p>El siguiente paso es establecer los objetivos de una empresa en relación al sector al que pertenece.</p>
             <p>Un <strong>OBJETIVO ESTRATÉGICO</strong> es un fin deseado, clave para la organización y para la consecución de su visión. Para una correcta planificación construya los objetivos  formando una pirámide. Los objetivos de cada nivel indican qué es lo que quiere lograrse, siendo la estructura de objetivos que está en el nivel inmediatamente inferior la que indica el cómo. Por tanto, cada objetivo es un fin en sí mismo, pero también a la vez un medio para el logro de los objetivos del nivel superior. </p>
-            <img src="img/piramide.png" alt="Pirámide de objetivos" style="width: 100%; max-width: 400px; display: block; margin: 20px auto;">
+            <img src="../img/piramide.png" alt="Pirámide de objetivos" style="width: 100%; max-width: 400px; display: block; margin: 20px auto;">
             
             <p><strong>Objetivos estratégicos:</strong> Concretan el contenido de la misión. Suelen referirse al crecimiento, rentabilidad y a la sostenibilidad de la empresa. Su horizonte es entre 3 a 5 años. </p>
             
@@ -193,7 +193,7 @@ mysqli_close($conn);
                 <li>Operativos: objetivos que se centran en operaciones y acciones concretas.</li>
             </ul>
 
-            <img src="img/metas.png" alt="Metas" style="display: block; margin: auto; max-width: 100%; height: auto;">
+            <img src="../img/metas.png" alt="Metas" style="display: block; margin: auto; max-width: 100%; height: auto;">
 
             <strong>EJEMPLOS</strong>
 

@@ -116,7 +116,7 @@
             <p>En este apartado describe la Misión de su empresa.</p>
 
             <?php
-            include 'conexion.php'; // Incluir el archivo de conexión
+            include '../config/conexion.php'; // Incluir el archivo de conexión
             $link = conectarse(); // Conectar a la base de datos
 
             // Recuperar el texto de la tabla mision

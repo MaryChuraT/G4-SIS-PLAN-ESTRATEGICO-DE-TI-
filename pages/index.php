@@ -65,10 +65,10 @@
 <body>
 
             <!-- Imagen izquierda -->
-            <img src="img/upt.png" class="left" alt="Logo izquierda">
+            <img src="../img/upt.png" class="left" alt="Logo izquierda">
 
             <!-- Imagen derecha -->
-            <img src="img/epis.png" class="right" alt="Logo derecha">
+            <img src="../img/epis.png" class="right" alt="Logo derecha">
 
     <div class="container">
         <div class="header">

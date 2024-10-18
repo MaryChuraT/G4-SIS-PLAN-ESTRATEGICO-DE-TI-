@@ -164,7 +164,7 @@
             <form action="guardar_valores.php" method="POST">
                 <table style="width: 100%;">
                     <?php
-                    include 'conexion.php'; // Incluir el archivo de conexión
+                    include '../config/conexion.php'; // Incluir el archivo de conexión
                     $link = conectarse(); // Conectar a la base de datos
 
                     // Consulta para obtener los valores
