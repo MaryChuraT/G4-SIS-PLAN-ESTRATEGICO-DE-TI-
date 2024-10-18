@@ -30,6 +30,32 @@ CREATE TABLE IF NOT EXISTS `mision` (
 INSERT INTO `mision` (`id`, `texto`) VALUES
 	(1, 'Escribir aqui la mision de la empresa');
 
+-- Volcando estructura para tabla bdproyectog4.objetivos
+CREATE TABLE IF NOT EXISTS `objetivos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `estrategico` varchar(500) DEFAULT NULL,
+  `especifico1` varchar(500) DEFAULT NULL,
+  `especifico2` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.objetivos: ~3 rows (aproximadamente)
+INSERT INTO `objetivos` (`id`, `estrategico`, `especifico1`, `especifico2`) VALUES
+	(1, 'Estrategico 1', 'Especifico 1.1', 'Especifico 1.2'),
+	(2, 'Estrategico 2', 'Especifico 2.1', 'Especifico 2.2'),
+	(3, 'Estrategico 3', 'Especifico 3.1', 'Especifico 3.2');
+
+-- Volcando estructura para tabla bdproyectog4.uen
+CREATE TABLE IF NOT EXISTS `uen` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uen` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.uen: ~1 rows (aproximadamente)
+INSERT INTO `uen` (`id`, `uen`) VALUES
+	(1, 'Informacion UEN del a empresa');
+
 -- Volcando estructura para tabla bdproyectog4.valores
 CREATE TABLE IF NOT EXISTS `valores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
