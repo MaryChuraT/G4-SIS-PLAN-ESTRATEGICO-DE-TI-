@@ -190,6 +190,11 @@
                 <button type="submit">Guardar cambios</button>
             </form>
         </div>
+        
+        <div class="footer">
+            <button onclick="location.href='vision.php'">2. VISIÓN</button> <!-- Botón de índice en la parte inferior -->
+            <button onclick="location.href='objetivos.php'">4. OBJETIVOS</button>
+        </div>
 
     </div>
 
