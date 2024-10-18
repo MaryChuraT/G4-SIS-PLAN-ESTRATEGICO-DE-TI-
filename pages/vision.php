@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misión</title>
+    <title>VISIÓN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: relative; /* Para posicionar el botón de índice */
+            position: relative;
         }
         .header {
             background-color: #008080;
@@ -63,10 +63,10 @@
             border-radius: 5px;
         }
         .index-button:hover {
-            background-color: #d76f70; /* Color rosado más oscuro al pasar el mouse */
+            background-color: #d76f70;
         }
         .save-button {
-            background-color: #87CEEB; /* Color azul claro */
+            background-color: #87CEEB;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -74,59 +74,49 @@
             border-radius: 5px;
         }
         .save-button:hover {
-            background-color: #00BFFF; /* Color azul más oscuro al pasar el mouse */
+            background-color: #00BFFF;
         }
         .boton {
             margin-top: 20px;
             display: flex;
-            justify-content: center; /* Centrar el contenido en el eje horizontal */
+            justify-content: center;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <button class="index-button" onclick="location.href='index.php'">INDICE</button> <!-- Botón de índice en la parte superior izquierda -->
+        <button class="index-button" onclick="location.href='index.php'">ÍNDICE</button> <!-- Botón de índice -->
 
         <div class="header">
-            <h1>1. MISIÓN</h1>
+            <h1>2. VISIÓN</h1>
         </div>
 
         <div class="content">
             <p>
-                La <strong>MISIÓN</strong> es la razón de ser de la empresa/organización.
+                La <strong>VISIÓN</strong> define lo que la empresa/organización quiere lograr en el futuro.
                 <ul>
-                    <li>Debe ser clara, concisa y compartida.</li>
-                    <li>Siempre orientada hacia el cliente no hacia el producto o servicio.</li>
-                    <li>Refleja el propósito fundamental de la empresa en el mercado.</li>
+                    <li>Debe ser retadora, positiva, compartida y coherente con la misión.</li>
+                    <li>Marca el fin último que la estrategia debe seguir.</li>
+                    <li>Proyecta la imagen de destino que se pretende alcanzar.</li>
                 </ul>
             </p>
 
             <p>
-                En términos generales describe la actividad y razón de ser de la organización y contribuye como una referencia permanente en el proceso de planificación estratégica. Se expresa a través de una oración que define el propósito fundamental de su existencia, estableciendo qué hace la empresa, por qué y para quién lo hace.
+                La visión debe ser conocida y compartida por todos los miembros de la empresa y también por aquellos que se relacionan con ella.
             </p>
-
-            <div class="example">
-                <h3>Ejemplos</h3>
-                <p><strong>Empresa de servicios:</strong> La gestión de servicios que contribuyen a la calidad de vida de las personas y generan valor para los grupos de interés.</p>
-                <p><strong>Empresa productora de café:</strong> Gracias a nuestro entusiasmo, trabajo en equipo y valores, queremos deleitar a nuestros clientes, en el mundo aman la calidad de vida, a través del mejor café que la naturaleza pueda ofrecer, ensalzado por las mejores tecnologías, por la emoción y la implicación intelectual que nacen de la búsqueda de lo bello en todo lo que hacemos.</p>
-                <p><strong>Agencia de certificación:</strong> Dar a nuestros clientes alvoro económico a través de la gestión de la Calidad, la Salud y la Seguridad, el Medio Ambiente y la Responsabilidad Social de sus activos, proyectos, productos y sistemas, obteniendo como resultado la capacidad para lograr la reducción de riesgos y la mejora de los resultados.</p>
-            </div>
-
-            <p>En este apartado describe la Misión de su empresa.</p>
 
             <?php
             include '../config/conexion.php'; // Incluir el archivo de conexión
             $link = conectarse(); // Conectar a la base de datos
 
-            // Recuperar el texto de la tabla mision
-            $sql = "SELECT texto FROM mision LIMIT 1"; // Recupera solo un registro
+            // Recuperar el texto de la tabla vision
+            $sql = "SELECT texto FROM vision LIMIT 1"; // Recupera solo un registro
             $result = mysqli_query($link, $sql);
             $texto = "";
 
             if ($result) {
                 if (mysqli_num_rows($result) > 0) {
-                    // Salida de cada fila
                     while ($row = mysqli_fetch_assoc($result)) {
                         $texto = $row["texto"];
                     }
@@ -141,18 +131,18 @@
             ?>
 
             <!-- Iniciar el formulario -->
-            <form action="../funtions/guardar_mision.php" method="POST">
+            <form action="../funtions/guardar_vision.php" method="POST">
                 <textarea name="texto" rows="5" style="width: 100%; border-radius: 5px; padding: 10px;"><?php echo htmlspecialchars($texto); ?></textarea>
                 
                 <div class="boton" style="justify-content: center;">
-                    <button type="submit" class="save-button">Guardar cambios</button> <!-- Botón de guardar cambios centrado -->
+                    <button type="submit" class="save-button">Guardar cambios</button> <!-- Botón de guardar cambios -->
                 </div>
             </form>
         </div>
 
         <div class="footer">
-            <button onclick="location.href='index.php'">INDICE</button> <!-- Botón de índice en la parte inferior -->
-            <button onclick="location.href='vision.php'">2. VISIÓN</button>
+            <button onclick="location.href='mision.php'">1. MISION</button> <!-- Botón de índice inferior -->
+            <button onclick="location.href='valores.php'">3. VALORES</button> <!-- Botón de navegación a la siguiente página -->
         </div>
     </div>
 

@@ -219,7 +219,7 @@ mysqli_close($conn);
 
             <div class="form-section">
                 <p>En este caso, comente sobre las distintas UEN que tiene su empresa:</p>
-                <form action="guardar_uen.php" method="POST">
+                <form action="../funtions/guardar_uen.php" method="POST">
                     <textarea name="uen_comentario" placeholder="Escriba aquí las UEN de su empresa"><?php echo htmlspecialchars($uen_text); ?></textarea>
                     <!-- Botón para guardar cambios en la UEN -->
                     <button type="submit">Guardar UEN</button>
@@ -228,7 +228,7 @@ mysqli_close($conn);
 
             <div class="form-section">
                 <p>Reflexione sobre la misión, visión y valores, y establezca 3 objetivos estratégicos y 6 específicos:</p>
-                <form action="guardar_objetivos.php" method="POST">
+                <form action="../funtions/guardar_objetivos.php" method="POST">
                     <table>
                         <tr>
                             <th>MISIÓN</th>
