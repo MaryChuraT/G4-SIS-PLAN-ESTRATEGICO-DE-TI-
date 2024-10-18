@@ -1,14 +1,12 @@
 <?php
-// Configuración de la conexión a la base de datos
-$host = 'localhost';
-$db   = 'usuarios';
-$user = 'root';
-$pass = '';
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+function conectarse()
+{
+    // Conectar con el servidor de base de datos
+    if (!($link = mysqli_connect("localhost", "root", "", "bdproyectog4"))) 
+    { 
+        echo "Error conectando a la Base de Datos."; 
+        exit(); 
+    }
+    return $link;
 }
 ?>
