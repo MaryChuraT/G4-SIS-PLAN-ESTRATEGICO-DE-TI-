@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis Interno: Cadena de Valor</title>
+    <title>6. Análisis Interno: Cadena de Valor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -153,7 +153,7 @@
     <!-- Botón de índice dentro del encabezado -->
     <div class="header">
         <button class="index-button" onclick="location.href='index.php'">ÍNDICE</button>
-        Análisis Interno: La Cadena de Valor
+        6. Análisis Interno: La Cadena de Valor
     </div>
 
     <div class="intro-text">
@@ -240,7 +240,7 @@
     <!-- Botones de Navegación al Pie de Página -->
     <div class="footer-buttons">
         <button onclick="location.href='analisis_interno_externo.php'">5. ANÁLISIS INTERNO Y EXTERNO</button>
-        <button onclick="location.href='cadena_de_valor.php'">Autodiagnóstico de la cadena de valor</button>
+        <button onclick="location.href='cadena_valor.php'">Autodiagnóstico de la cadena de valor</button>
     </div>
 </div>
 
