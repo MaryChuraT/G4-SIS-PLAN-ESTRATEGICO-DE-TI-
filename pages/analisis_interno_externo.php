@@ -122,8 +122,8 @@
     </div>
 
     <div class="footer">
-        <button onclick="location.href='objetivos_estrategicos.php'">4. OBJETIVOS ESTRATÉGICOS</button>
-        <button onclick="location.href='cadena_de_valor.php'">6. CADENA DE VALOR</button>
+        <button onclick="location.href='objetivos.php'">4. OBJETIVOS ESTRATÉGICOS</button>
+        <button onclick="location.href='analisis_interno.php'">6. CADENA DE VALOR</button>
     </div>
 </div>
 

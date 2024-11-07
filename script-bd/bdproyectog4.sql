@@ -28,10 +28,22 @@ CREATE TABLE IF NOT EXISTS `debilidad` (
 
 -- Volcando datos para la tabla bdproyectog4.debilidad: ~4 rows (aproximadamente)
 INSERT INTO `debilidad` (`id`, `texto`) VALUES
-	(1, 'debilidad 1'),
-	(2, 'debilidad 2'),
+	(1, 'a'),
+	(2, 'a'),
 	(3, 'debilidad 3'),
 	(4, 'debilidad 4');
+
+-- Volcando estructura para tabla bdproyectog4.empresa
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(500) DEFAULT NULL,
+  `descripcion` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.empresa: ~1 rows (aproximadamente)
+INSERT INTO `empresa` (`id`, `nombre`, `descripcion`) VALUES
+	(1, 'nombre de empresass', 'describe la empresa');
 
 -- Volcando estructura para tabla bdproyectog4.fortaleza
 CREATE TABLE IF NOT EXISTS `fortaleza` (
@@ -42,8 +54,8 @@ CREATE TABLE IF NOT EXISTS `fortaleza` (
 
 -- Volcando datos para la tabla bdproyectog4.fortaleza: ~4 rows (aproximadamente)
 INSERT INTO `fortaleza` (`id`, `texto`) VALUES
-	(1, 'fortaleza 1'),
-	(2, 'fortaleza 2'),
+	(1, 'a'),
+	(2, 'a'),
 	(3, 'fortaleza 3'),
 	(4, 'fortaleza 4');
 
@@ -73,6 +85,18 @@ INSERT INTO `objetivos` (`id`, `estrategico`, `especifico1`, `especifico2`) VALU
 	(2, 'Estrategico 2', 'Especifico 2.1', 'Especifico 2.2'),
 	(3, 'Estrategico 3', 'Especifico 3.1', 'Especifico 3.2');
 
+-- Volcando estructura para tabla bdproyectog4.observaciones
+CREATE TABLE IF NOT EXISTS `observaciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `texto` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.observaciones: ~2 rows (aproximadamente)
+INSERT INTO `observaciones` (`id`, `texto`) VALUES
+	(1, 'a'),
+	(2, 'a');
+
 -- Volcando estructura para tabla bdproyectog4.uen
 CREATE TABLE IF NOT EXISTS `uen` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -91,11 +115,12 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla bdproyectog4.usuarios: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.usuarios: ~2 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `username`, `password`) VALUES
-	(1, 'user', '$2y$10$wuwG9pqCg7N6RzHxrBcskOc3FzS8p/83jJ6ByEsCve3fCDCQj4Boe');
+	(1, 'user', '$2y$10$wuwG9pqCg7N6RzHxrBcskOc3FzS8p/83jJ6ByEsCve3fCDCQj4Boe'),
+	(2, 'a', '$2y$10$3CQF7.m72wMsh2Tpqr8cAehJurFylfswoaLvhs99jn1Iu9jgt3EIG');
 
 -- Volcando estructura para tabla bdproyectog4.valores
 CREATE TABLE IF NOT EXISTS `valores` (
