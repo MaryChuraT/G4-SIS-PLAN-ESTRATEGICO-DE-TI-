@@ -110,7 +110,7 @@
             <button onclick="location.href='valores.php'">3. VALORES</button>
             <button onclick="location.href='objetivos.php'">4. OBJETIVOS</button>
             <button onclick="location.href='analisis_interno_externo.php'">5. ANÁLISIS INTERNO Y EXTERNO</button>
-            <button onclick="location.href='cadena_valor.php'">6. CADENA DE VALOR</button>
+            <button onclick="location.href='analisis_interno.php'">6. CADENA DE VALOR</button>
             <button onclick="location.href='matriz_participacion.php'">7. MATRIZ PARTICIPACIÓN</button>
             <button onclick="location.href='fuerzas_porter.php'">8. LAS 5 FUERZAS DE PORTER</button>
             <button onclick="location.href='pest.php'">9. PEST</button>
