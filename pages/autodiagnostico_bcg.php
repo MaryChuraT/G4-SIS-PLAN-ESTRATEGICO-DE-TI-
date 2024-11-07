@@ -1,3 +1,53 @@
+<?php
+include '../config/conexion.php'; // Asegúrate de que la ruta sea correcta
+$link = conectarse();
+
+// Procesar los datos del formulario si se hace clic en "Guardar cambios"
+if (isset($_POST['guardar_cambios'])) {
+    // Obtener los valores de los campos de texto
+    $fortaleza_3 = mysqli_real_escape_string($link, $_POST['fortaleza_3']);
+    $fortaleza_4 = mysqli_real_escape_string($link, $_POST['fortaleza_4']);
+    $debilidad_3 = mysqli_real_escape_string($link, $_POST['debilidad_3']);
+    $debilidad_4 = mysqli_real_escape_string($link, $_POST['debilidad_4']);
+
+    // Actualizar fortalezas
+    $queryUpdateFortaleza3 = "UPDATE fortaleza SET texto='$fortaleza_3' WHERE id=3";
+    $queryUpdateFortaleza4 = "UPDATE fortaleza SET texto='$fortaleza_4' WHERE id=4";
+    mysqli_query($link, $queryUpdateFortaleza3);
+    mysqli_query($link, $queryUpdateFortaleza4);
+
+    // Actualizar debilidades
+    $queryUpdateDebilidad3 = "UPDATE debilidad SET texto='$debilidad_3' WHERE id=3";
+    $queryUpdateDebilidad4 = "UPDATE debilidad SET texto='$debilidad_4' WHERE id=4";
+    mysqli_query($link, $queryUpdateDebilidad3);
+    mysqli_query($link, $queryUpdateDebilidad4);
+
+    // Redirigir a la misma página para evitar reenvíos duplicados
+    header("Location: autodiagnostico_bcg.php");
+    exit();
+}
+
+// Consultar fortalezas y debilidades después de la actualización
+$queryFortalezas = "SELECT texto FROM fortaleza WHERE id IN (3, 4)";
+$resultFortalezas = mysqli_query($link, $queryFortalezas);
+
+$queryDebilidades = "SELECT texto FROM debilidad WHERE id IN (3, 4)";
+$resultDebilidades = mysqli_query($link, $queryDebilidades);
+
+$fortalezas = [];
+while ($row = mysqli_fetch_assoc($resultFortalezas)) {
+    $fortalezas[] = $row['texto'];
+}
+
+$debilidades = [];
+while ($row = mysqli_fetch_assoc($resultDebilidades)) {
+    $debilidades[] = $row['texto'];
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -98,6 +148,47 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .navigation-button:hover {
+            background-color: #00BFFF;
+        }
+        .product-bar {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        }
+        .bcg-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .progress-container {
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+        }
+        .progress {
+            height: 20px;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #87CEEB;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .navigation-button {
+            background-color: #87CEEB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
         .navigation-button:hover {
             background-color: #00BFFF;
         }
@@ -431,29 +522,69 @@
 
         <!-- Sección de Iconos para la Matriz BCG -->
         <div class="matrix-icons">
-            <h3>Posicionamiento de Productos</h3>
-            <div class="icons">
-                <img src="../img/incognita.png" alt="Incógnita">
-                <img src="../img/estrella.png" alt="Estrella">
-                <img src="../img/vaca.png" alt="Vaca">
-                <img src="../img/perro.png" alt="Perro">
+        <h3>Posicionamiento de Productos</h3>
+        <div class="icons">
+            <div class="product-bar">
+                <img id="icon-product-1" src="../img/incognita.png" alt="Incógnita" class="bcg-icon">
+                <span>Producto 1</span>
+                <div class="progress-container">
+                    <div class="progress" id="progress-product-1" style="width: 0%;">0%</div>
+                </div>
             </div>
-        </div>
-
-        <!-- Fortalezas y Debilidades -->
-        <div class="strengths-weaknesses">
-            <div class="input-box">
-                <h4>Fortalezas</h4>
-                <input type="text" placeholder="F3">
-                <input type="text" placeholder="F4">
+            <div class="product-bar">
+                <img id="icon-product-2" src="../img/incognita.png" alt="Incógnita" class="bcg-icon">
+                <span>Producto 2</span>
+                <div class="progress-container">
+                    <div class="progress" id="progress-product-2" style="width: 0%;">0%</div>
+                </div>
             </div>
-            <div class="input-box">
-                <h4>Debilidades</h4>
-                <input type="text" placeholder="D3">
-                <input type="text" placeholder="D4">
+            <div class="product-bar">
+                <img id="icon-product-3" src="../img/incognita.png" alt="Incógnita" class="bcg-icon">
+                <span>Producto 3</span>
+                <div class="progress-container">
+                    <div class="progress" id="progress-product-3" style="width: 0%;">0%</div>
+                </div>
+            </div>
+            <div class="product-bar">
+                <img id="icon-product-4" src="../img/incognita.png" alt="Incógnita" class="bcg-icon">
+                <span>Producto 4</span>
+                <div class="progress-container">
+                    <div class="progress" id="progress-product-4" style="width: 0%;">0%</div>
+                </div>
+            </div>
+            <div class="product-bar">
+                <img id="icon-product-5" src="../img/incognita.png" alt="Incógnita" class="bcg-icon">
+                <span>Producto 5</span>
+                <div class="progress-container">
+                    <div class="progress" id="progress-product-5" style="width: 0%;">0%</div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Fortalezas y Debilidades -->
+    <form method="POST" action="autodiagnostico_bcg.php">
+    <div class="strengths-weaknesses">
+        <div class="input-box">
+            <h4>Fortalezas</h4>
+            <input type="text" name="fortaleza_3" value="<?php echo isset($fortalezas[0]) ? $fortalezas[0] : ''; ?>" placeholder="F3">
+            <input type="text" name="fortaleza_4" value="<?php echo isset($fortalezas[1]) ? $fortalezas[1] : ''; ?>" placeholder="F4">
+        </div>
+        <div class="input-box">
+            <h4>Debilidades</h4>
+            <input type="text" name="debilidad_3" value="<?php echo isset($debilidades[0]) ? $debilidades[0] : ''; ?>" placeholder="D3">
+            <input type="text" name="debilidad_4" value="<?php echo isset($debilidades[1]) ? $debilidades[1] : ''; ?>" placeholder="D4">
+        </div>
+    </div>
+    
+    <!-- Contenedor del botón centrado -->
+    <div class="button-container">
+        <button type="submit" name="guardar_cambios" class="navigation-button">Guardar cambios</button>
+    </div>
+</form>
+
+
+
 
     <!-- Botones de Navegación -->
     <div class="navigation-buttons">
@@ -563,8 +694,60 @@ function calcularTCM() {
     }
 }
 
+function updateProgressBars() {
+    const prms = document.querySelectorAll('.prm-celda');
 
+    prms.forEach((prm, index) => {
+        const value = parseFloat(prm.textContent) || 0;
+        const progressBar = document.getElementById(`progress-product-${index + 1}`);
+        const widthPercentage = Math.min(value * 50, 100); // Escalado para representar PRM (0-2) como 0-100%
+        
+        progressBar.style.width = `${widthPercentage}%`;
+        progressBar.textContent = `${(widthPercentage).toFixed(0)}%`;
+    });
+}
 
+function updateIcons() {
+    const prms = document.querySelectorAll('.prm-celda');
+    const tcms = document.querySelectorAll('.tcm-celda');
+    
+    prms.forEach((prm, index) => {
+        const prmValue = parseFloat(prm.textContent) || 0;
+        const tcmValue = parseFloat(tcms[index].textContent) || 0;
+        const icon = document.getElementById(`icon-product-${index + 1}`);
+        
+        // Condiciones para cambiar las imágenes
+        if (prmValue < 1 && tcmValue > 0.1) {
+            icon.src = "../img/incognita.png";
+            icon.alt = "Incógnita";
+        } else if (prmValue >= 1 && tcmValue > 0.1) {
+            icon.src = "../img/estrella.png";
+            icon.alt = "Estrella";
+        } else if (prmValue >= 1 && tcmValue <= 0.1) {
+            icon.src = "../img/vaca.png";
+            icon.alt = "Vaca";
+        } else {
+            icon.src = "../img/perro.png";
+            icon.alt = "Perro";
+        }
+    });
+}
+
+// Llamar a updateProgressBars y updateIcons después de actualizar PRM y TCM
+calcularPRM = (function(originalFunction) {
+    return function() {
+        originalFunction();
+        updateProgressBars();
+        updateIcons();
+    };
+})(calcularPRM);
+
+calcularTCM = (function(originalFunction) {
+    return function() {
+        originalFunction();
+        updateIcons();
+    };
+})(calcularTCM);
 
 
 
