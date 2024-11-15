@@ -589,7 +589,7 @@ while ($row = mysqli_fetch_assoc($resultDebilidades)) {
     <!-- Botones de Navegación -->
     <div class="navigation-buttons">
         <button class="navigation-button" onclick="location.href='matriz_participacion.php'">7. BCG</button>
-        <button class="navigation-button" onclick="location.href='analisis_porter.php'">8. ANÁLISIS PORTER</button>
+        <button class="navigation-button" onclick="location.href='fuerzas_porter.php'">8. ANÁLISIS PORTER</button>
     </div>
 </div>
 
