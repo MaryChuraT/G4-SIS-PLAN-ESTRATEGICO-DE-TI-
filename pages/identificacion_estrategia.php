@@ -95,6 +95,22 @@
         .additional-table .col-header {
             background-color: #ffc99f; /* Naranja claro */
         }
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            background-color: #008080;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005f5f;
+        }
     </style>
 </head>
 <body>
