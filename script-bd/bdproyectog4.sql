@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.24-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
 -- HeidiSQL Versión:             12.4.0.6659
 -- --------------------------------------------------------
@@ -16,7 +16,7 @@
 
 
 -- Volcando estructura de base de datos para bdproyectog4
-CREATE DATABASE IF NOT EXISTS `bdproyectog4` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE IF NOT EXISTS `bdproyectog4` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `bdproyectog4`;
 
 -- Volcando estructura para tabla bdproyectog4.debilidad
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `debilidad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bdproyectog4.debilidad: ~4 rows (aproximadamente)
 INSERT INTO `debilidad` (`id`, `texto`) VALUES
@@ -39,9 +39,9 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `nombre` varchar(500) DEFAULT NULL,
   `descripcion` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bdproyectog4.empresa: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.empresa: ~0 rows (aproximadamente)
 INSERT INTO `empresa` (`id`, `nombre`, `descripcion`) VALUES
 	(1, 'nombre de empresass', 'describe la empresa');
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `fortaleza` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bdproyectog4.fortaleza: ~4 rows (aproximadamente)
 INSERT INTO `fortaleza` (`id`, `texto`) VALUES
@@ -64,9 +64,9 @@ CREATE TABLE IF NOT EXISTS `mision` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bdproyectog4.mision: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.mision: ~0 rows (aproximadamente)
 INSERT INTO `mision` (`id`, `texto`) VALUES
 	(1, 'Escribir aqui la mision de la empresa');
 
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `objetivos` (
   `especifico1` varchar(500) DEFAULT NULL,
   `especifico2` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bdproyectog4.objetivos: ~3 rows (aproximadamente)
 INSERT INTO `objetivos` (`id`, `estrategico`, `especifico1`, `especifico2`) VALUES
@@ -90,21 +90,31 @@ CREATE TABLE IF NOT EXISTS `observaciones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bdproyectog4.observaciones: ~2 rows (aproximadamente)
 INSERT INTO `observaciones` (`id`, `texto`) VALUES
 	(1, 'a'),
 	(2, 'a');
 
+-- Volcando estructura para tabla bdproyectog4.pest_analisis
+CREATE TABLE IF NOT EXISTS `pest_analisis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion` text NOT NULL,
+  `valoracion` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla bdproyectog4.pest_analisis: ~0 rows (aproximadamente)
+
 -- Volcando estructura para tabla bdproyectog4.uen
 CREATE TABLE IF NOT EXISTS `uen` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uen` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bdproyectog4.uen: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.uen: ~0 rows (aproximadamente)
 INSERT INTO `uen` (`id`, `uen`) VALUES
 	(1, 'Informacion UEN del a empresa');
 
@@ -115,19 +125,21 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bdproyectog4.usuarios: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.usuarios: ~4 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `username`, `password`) VALUES
 	(1, 'user', '$2y$10$wuwG9pqCg7N6RzHxrBcskOc3FzS8p/83jJ6ByEsCve3fCDCQj4Boe'),
-	(2, 'a', '$2y$10$3CQF7.m72wMsh2Tpqr8cAehJurFylfswoaLvhs99jn1Iu9jgt3EIG');
+	(2, 'a', '$2y$10$3CQF7.m72wMsh2Tpqr8cAehJurFylfswoaLvhs99jn1Iu9jgt3EIG'),
+	(3, 'mary', '$2y$10$b8N9DbOdvfrlqURWVaM58.6DnqZN7xGgbQidMoVfiPDgWURlWAelC'),
+	(4, 'luz', '$2y$10$28viczjzYpii7myj4ndd..Z9NWcujLJQNJKXRoOEsdzhmW20bQ0pK');
 
 -- Volcando estructura para tabla bdproyectog4.valores
 CREATE TABLE IF NOT EXISTS `valores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bdproyectog4.valores: ~6 rows (aproximadamente)
 INSERT INTO `valores` (`id`, `texto`) VALUES
@@ -143,9 +155,9 @@ CREATE TABLE IF NOT EXISTS `vision` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `texto` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bdproyectog4.vision: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.vision: ~0 rows (aproximadamente)
 INSERT INTO `vision` (`id`, `texto`) VALUES
 	(1, 'Texto de Vision');
 

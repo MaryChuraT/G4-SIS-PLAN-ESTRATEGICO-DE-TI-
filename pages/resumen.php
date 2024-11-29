@@ -147,6 +147,11 @@ while ($row = mysqli_fetch_assoc($fortalezaResult)) {
         .index-button:hover {
             background-color: #d76f70;
         }
+        .acciones-table td {
+            height: 30px;
+            border: 1px solid blue;
+        }
+
     </style>
 </head>
 <body>
@@ -238,6 +243,23 @@ while ($row = mysqli_fetch_assoc($fortalezaResult)) {
             <td><textarea placeholder="Oportunidad 1..." readonly></textarea></td>
         </tr>
     </table>
+
+    <div class="section-title">ACCIONES COMPETITIVAS</div>
+    <table class="acciones-table">
+        <?php for ($i = 1; $i <= 16; $i++): ?>
+        <tr>
+            <td><?php echo $i; ?></td>
+            <td><textarea></textarea></td>
+        </tr>
+        <?php endfor; ?>
+    </table>
+
+    <div class="section-title">CONCLUSIONES</div>
+    <div class="section-content">
+        <textarea placeholder="Anote las conclusiones más relevantes de su Plan."></textarea>
+    </div>
+
+
 </div>
 
 </body>

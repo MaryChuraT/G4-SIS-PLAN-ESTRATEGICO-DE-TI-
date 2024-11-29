@@ -119,7 +119,7 @@
             <button onclick="location.href='matriz_participacion.php'">7. MATRIZ PARTICIPACIÓN</button>
             <button onclick="location.href='fuerzas_porter.php'">8. LAS 5 FUERZAS DE PORTER</button>
             <button onclick="location.href='pest.php'">9. PEST</button>
-            <button onclick="location.href='identificacion_estrategia.php'">10. IDENTIFICACIÓN ESTRATEGIA</button>
+            <button onclick="location.href='estrategias.php'">10. IDENTIFICACIÓN ESTRATEGIA</button>
             <button onclick="location.href='matriz_came.php'">11. MATRIZ CAME</button>
         </div>
 
