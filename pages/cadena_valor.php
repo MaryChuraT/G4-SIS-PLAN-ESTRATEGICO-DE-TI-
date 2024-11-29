@@ -317,8 +317,8 @@
 
     <!-- Botones de navegación al pie de página -->
     <div class="footer-buttons">
-        <button onclick="location.href='analisis_interno_externo.php'" class="navigation-button">5. ANÁLISIS INTERNO Y EXTERNO</button>
-        <button onclick="location.href='cadena_de_valor.php'" class="navigation-button">6. CADENA DE VALOR</button>
+        <button onclick="location.href='analisis_interno.php'" class="navigation-button">6. CADENA DE VALOR</button>
+        <button onclick="location.href='matriz_participacion.php'" class="navigation-button">7. MATRIZ PARTICIPACIÓN</button>
     </div>
 </div>
 

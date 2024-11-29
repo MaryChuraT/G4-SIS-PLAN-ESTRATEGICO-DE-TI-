@@ -33,6 +33,18 @@ REPLACE INTO `debilidad` (`id`, `texto`) VALUES
 	(3, 'debilidad 3'),
 	(4, 'debilidad 4');
 
+-- Volcando estructura para tabla bdproyectog4.empresa
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(500) DEFAULT NULL,
+  `descripcion` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.empresa: ~1 rows (aproximadamente)
+REPLACE INTO `empresa` (`id`, `nombre`, `descripcion`) VALUES
+	(1, 'nombre de empresass', 'describe la empresa');
+
 -- Volcando estructura para tabla bdproyectog4.fortaleza
 CREATE TABLE IF NOT EXISTS `fortaleza` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -46,6 +58,19 @@ REPLACE INTO `fortaleza` (`id`, `texto`) VALUES
 	(2, 'a'),
 	(3, 'fortaleza 3'),
 	(4, 'fortaleza 4');
+
+-- Volcando estructura para tabla bdproyectog4.matriz_came
+CREATE TABLE IF NOT EXISTS `matriz_came` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `debilidades` text NOT NULL,
+  `amenazas` text NOT NULL,
+  `fortalezas` text NOT NULL,
+  `oportunidades` text NOT NULL,
+  `fecha_actualizacion` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.matriz_came: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla bdproyectog4.mision
 CREATE TABLE IF NOT EXISTS `mision` (
@@ -80,10 +105,20 @@ CREATE TABLE IF NOT EXISTS `observaciones` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla bdproyectog4.observaciones: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.observaciones: ~2 rows (aproximadamente)
 REPLACE INTO `observaciones` (`id`, `texto`) VALUES
 	(1, 'a'),
 	(2, 'a');
+
+-- Volcando estructura para tabla bdproyectog4.pest_analisis
+CREATE TABLE IF NOT EXISTS `pest_analisis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion` text NOT NULL,
+  `valoracion` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla bdproyectog4.pest_analisis: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla bdproyectog4.uen
 CREATE TABLE IF NOT EXISTS `uen` (
@@ -103,12 +138,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla bdproyectog4.usuarios: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla bdproyectog4.usuarios: ~4 rows (aproximadamente)
 REPLACE INTO `usuarios` (`id`, `username`, `password`) VALUES
 	(1, 'user', '$2y$10$wuwG9pqCg7N6RzHxrBcskOc3FzS8p/83jJ6ByEsCve3fCDCQj4Boe'),
-	(2, 'a', '$2y$10$3CQF7.m72wMsh2Tpqr8cAehJurFylfswoaLvhs99jn1Iu9jgt3EIG');
+	(2, 'a', '$2y$10$3CQF7.m72wMsh2Tpqr8cAehJurFylfswoaLvhs99jn1Iu9jgt3EIG'),
+	(3, 'mary', '$2y$10$b8N9DbOdvfrlqURWVaM58.6DnqZN7xGgbQidMoVfiPDgWURlWAelC'),
+	(4, 'luz', '$2y$10$28viczjzYpii7myj4ndd..Z9NWcujLJQNJKXRoOEsdzhmW20bQ0pK');
 
 -- Volcando estructura para tabla bdproyectog4.valores
 CREATE TABLE IF NOT EXISTS `valores` (
